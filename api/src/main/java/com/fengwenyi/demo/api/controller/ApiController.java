@@ -17,10 +17,11 @@ public class ApiController {
     // get
     @ApiOperation(value = "获取用户", notes = "获取用户")
     @GetMapping("/get-user")
-    public String getUser () {
-        Result result = new Result();
-        result.setResult(ReturnCode.SUCCESS);
-        return new Gson().toJson(result);
+    public UserModel getUser () {
+        UserModel userModel = new UserModel();
+        userModel.name = "zhansan";
+        userModel.age = 25;
+        return userModel;
     }
 
     // post
