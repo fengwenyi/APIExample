@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+public class Swagger2Config {
 
     private static final String DESCRIPTION = "我是冯文议(Erwin Feng)，Java工程师。我们如何建立一个API工程？怎么设置包比较合理？" +
             "以及与其他一些框架如何优雅的整合。这是一个实战示例，我希望通过这个实例，能够解决或者慢慢解决上面的问题，当然，我自己也会不断去探索" +

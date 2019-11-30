@@ -1,11 +1,18 @@
 package com.fengwenyi.api_example.controller;
 
+import com.fengwenyi.api_example.util.ResultUtils;
+import com.fengwenyi.api_result.helper.ResultHelper;
+import com.fengwenyi.api_result.model.ResultModel;
+import com.fengwenyi.javalib.util.PrintUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import net.iutil.ApiResult;
-import net.iutil.javalib.util.PrintUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Api Test
@@ -20,37 +27,62 @@ import org.springframework.web.bind.annotation.*;
         produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class ApiTestController {
 
-    // 增
+    /**
+     * 添加方法示例
+     * @return {@link ResultModel}
+     */
     @ApiOperation(value = "添加方法示例")
     @PostMapping
-    public ApiResult add() {
-        PrintUtils.info(" api-test -> add");
-        return ApiResult.success();
+    public ResultModel<?> add() {
+        return ResultHelper.success("添加成功");
     }
 
 
-    // 删
+    /**
+     * 删除方法示例
+     * @return {@link ResultModel}
+     */
     @ApiOperation(value = "删除方法示例")
     @DeleteMapping
-    public ApiResult delete() {
-        PrintUtils.info(" api-test -> delete");
-        return ApiResult.success();
+    public ResultModel<?> delete() {
+        return ResultUtils.success();
     }
 
-    // 改
+    /**
+     * 修改方法示例
+     * @return {@link ResultModel}
+     */
     @ApiOperation(value = "修改方法示例")
     @PutMapping
-    public ApiResult update() {
-        PrintUtils.info(" api-test -> update");
-        return ApiResult.success();
+    public ResultModel<?> update() {
+        return ResultUtils.error("修改失败");
     }
 
-    // 查
+    /**
+     * 查询方法示例
+     * @return {@link ResultModel}
+     */
     @ApiOperation(value = "查询方法示例")
     @GetMapping
-    public ApiResult get() {
-        PrintUtils.info(" api-test -> get");
-        return ApiResult.success();
+    public ResultModel<?> get() {
+        List<Map<String, String>> list = new ArrayList<>();
+        Map<String, String> map1 = new HashMap<>();
+
+        map1.put("name", "张飞");
+        map1.put("desc", "燕人张飞");
+        list.add(map1);
+
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("name", "赵云");
+        map2.put("desc", "常山赵子龙");
+        list.add(map2);
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("name", "关羽");
+        map3.put("desc", "温酒斩华雄");
+        list.add(map3);
+
+        return ResultUtils.success(list);
     }
 
 }
