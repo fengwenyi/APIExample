@@ -4,7 +4,7 @@ import com.fengwenyi.api_result.helper.ResultHelper;
 import com.fengwenyi.api_result.model.ResultModel;
 
 /**
- * 返回结果封装工具类
+ * 返回结果工具类
  * @author Erwin Feng[xfsy_2015@163.com]
  * @since 2019/11/30 13:54
  */

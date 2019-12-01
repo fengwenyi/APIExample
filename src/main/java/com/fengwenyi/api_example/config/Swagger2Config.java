@@ -65,7 +65,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("API实例工程")
                 .description(DESCRIPTION)
-                .version("1.0.0.BUILD")
+                .version("2.0.2")
                 .license("许可证")
                 .licenseUrl("许可证URL")
 
