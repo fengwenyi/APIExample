@@ -1,5 +1,8 @@
 package com.fengwenyi.api_example.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.fengwenyi.api_example.bean.PageResultDataBean;
+import com.fengwenyi.api_example.exception.DataParseException;
 import com.fengwenyi.api_example.util.ApiResultUtils;
 import com.fengwenyi.api_example.util.PageResultUtils;
 import com.fengwenyi.api_example.util.ResultUtils;
@@ -136,6 +139,73 @@ public class ApiTestResultController {
         list.add(map3);
 
         return list;
+    }
+
+    // 测试解析范例
+
+    /**
+     * 解析常用返回结果示例
+     * @return 数据
+     */
+    public Object parseResult() {
+        String result = "";
+        ResultModel<?> resultModel = JSON.parseObject(result, ResultModel.class);
+        Boolean success = resultModel.getSuccess();
+        if (success != null && success) {
+            return resultModel.getData();
+        } else {
+            // 异常信息
+            String message = resultModel.getMessage();
+            // 异常处理
+            throw new DataParseException(message);
+        }
+    }
+
+    /**
+     * 解析接口返回结果示例
+     * @return 数据
+     */
+    public Object parseApiResult() {
+        String apiResult = "";
+        ApiResultModel<?, ?> apiResultModel = JSON.parseObject(apiResult, ApiResultModel.class);
+        Boolean success = apiResultModel.getSuccess();
+        if (success != null && success) {
+            return apiResultModel.getData();
+        } else {
+            Object code = apiResultModel.getCode();
+            String message = apiResultModel.getMessage();
+            // 根据接口错误码分别进行处理
+            // ...
+            return null;
+        }
+    }
+
+    /**
+     * 解析分页返回结果示例
+     * @return {@link PageResultDataBean}
+     */
+    public PageResultDataBean parsePageResult() {
+        String pageResult = "";
+        PageResultModel<List<?>> pageResultModel = JSON.parseObject(pageResult, PageResultModel.class);
+        Boolean success = pageResultModel.getSuccess();
+        if (success != null && success) {
+            List<?> data = pageResultModel.getData();
+            Long total = pageResultModel.getTotal();
+            Integer size = pageResultModel.getSize();
+            Long pages = pageResultModel.getPages();
+            Long current = pageResultModel.getCurrent();
+            return new PageResultDataBean()
+                    .setTotal(total)
+                    .setSize(size)
+                    .setPages(pages)
+                    .setCurrent(current)
+                    .setData(data);
+        } else {
+            // 异常信息
+            String message = pageResultModel.getMessage();
+            // 异常处理
+            throw new DataParseException(message);
+        }
     }
 
 }
