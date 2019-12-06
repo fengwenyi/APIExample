@@ -2,7 +2,7 @@ package com.fengwenyi.api_example.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.fengwenyi.api_example.bean.PageResultDataBean;
-import com.fengwenyi.api_example.exception.DataParseException;
+import com.fengwenyi.api_example.exceptions.DataParseException;
 import com.fengwenyi.api_example.util.ApiResultUtils;
 import com.fengwenyi.api_example.util.PageResultUtils;
 import com.fengwenyi.api_example.util.ResultUtils;

@@ -1,4 +1,4 @@
-package com.fengwenyi.api_example.exception;
+package com.fengwenyi.api_example.exceptions;
 
 /**
  * 数据解析异常

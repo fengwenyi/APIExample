@@ -102,3 +102,22 @@
 [2019-06-05 10:17:24.037]  api-test -> update
 [2019-06-05 10:17:36.409]  api-test -> delete
 ```
+
+## 包结构
+
+```
+controller -> business -> service -> dbBusiness -> dbService
+```
+
+## 关于DB
+
+```
+dbService 只能由 dbBusiness调用
+
+在 dbService 里处理所有与数据库相关的异常
+
+查询由 find 开头
+    携带All：查询所有的数据
+    携带Use：查询没有被逻辑删除，且已经发布的数据
+    携带Normal：查询没有被逻辑删除的数据
+```
