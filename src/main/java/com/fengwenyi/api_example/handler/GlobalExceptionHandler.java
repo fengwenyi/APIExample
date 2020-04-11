@@ -6,6 +6,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,8 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Erwin Feng[xfsy_2015@163.com]
  * @since 2019/12/6 17:48
  */
-@ControllerAdvice
-@ResponseBody
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     /*============= 请求错误 start ==============================================*/
