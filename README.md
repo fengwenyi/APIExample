@@ -243,3 +243,13 @@ PUT /collection/resource：返回完整的资源对象
 PATCH /collection/resource：返回完整的资源对象
 DELETE /collection/resource：返回一个空文档
 ```
+
+2020.5.11 规划
+
+```
+api-example
+    api-web
+    api-webfluex
+    api-swagger
+```
+
