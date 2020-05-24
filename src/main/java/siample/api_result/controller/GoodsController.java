@@ -29,4 +29,10 @@ public class GoodsController {
         return goodsBusiness.page(currentPage);
     }
 
+    // 分页
+    @GetMapping("/api-page/{currentPage}")
+    public ResultPageModel<?> apiPage(@PathVariable Long currentPage) {
+        return goodsBusiness.page(currentPage);
+    }
+
 }
