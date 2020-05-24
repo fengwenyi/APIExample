@@ -1,5 +1,6 @@
 package siample.api_result.controller;
 
+import com.fengwenyi.api_result.model.ResultApiPageModel;
 import com.fengwenyi.api_result.model.ResultPageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -29,10 +30,10 @@ public class GoodsController {
         return goodsBusiness.page(currentPage);
     }
 
-    // 分页
+    // 接口数据分页
     @GetMapping("/api-page/{currentPage}")
-    public ResultPageModel<?> apiPage(@PathVariable Long currentPage) {
-        return goodsBusiness.page(currentPage);
+    public ResultApiPageModel<Integer, ?> apiPage(@PathVariable Long currentPage) {
+        return goodsBusiness.apiPage(currentPage);
     }
 
 }
