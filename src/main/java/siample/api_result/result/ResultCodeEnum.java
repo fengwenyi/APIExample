@@ -3,16 +3,14 @@ package siample.api_result.result;
 import lombok.Getter;
 
 /**
+ * 返回结果码枚举
  * @author Erwin Feng
  * @since 2020/5/24
  */
 @Getter
 public enum ResultCodeEnum {
 
-    SUCCESS(0, "Success"),
-
-
-    ;
+    SUCCESS(0, "Success");
 
     /** 返回码 */
     private Integer code;
