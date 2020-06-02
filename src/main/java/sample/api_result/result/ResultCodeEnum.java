@@ -1,4 +1,4 @@
-package siample.api_result.result;
+package sample.api_result.result;
 
 import lombok.Getter;
 

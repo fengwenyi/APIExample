@@ -1,4 +1,4 @@
-package siample.api_result.vo.response;
+package sample.api_result.vo.response;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

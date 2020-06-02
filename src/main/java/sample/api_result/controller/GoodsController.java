@@ -1,4 +1,4 @@
-package siample.api_result.controller;
+package sample.api_result.controller;
 
 import com.fengwenyi.api_result.model.ResultApiPageModel;
 import com.fengwenyi.api_result.model.ResultPageModel;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import siample.api_result.business.GoodsBusiness;
+import sample.api_result.business.GoodsBusiness;
 
 /**
  * 商品接口

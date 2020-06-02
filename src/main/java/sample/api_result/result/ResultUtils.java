@@ -1,4 +1,4 @@
-package siample.api_result.result;
+package sample.api_result.result;
 
 import com.fengwenyi.api_result.helper.ResultApiHelper;
 import com.fengwenyi.api_result.model.ResultApiModel;

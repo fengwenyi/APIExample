@@ -1,4 +1,4 @@
-package siample.api_result.business;
+package sample.api_result.business;
 
 import com.fengwenyi.api_result.model.ResultApiPageModel;
 import com.fengwenyi.api_result.model.ResultPageModel;

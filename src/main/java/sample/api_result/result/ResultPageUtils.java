@@ -1,8 +1,7 @@
-package siample.api_result.result;
+package sample.api_result.result;
 
 import com.fengwenyi.api_result.helper.ResultApiPageHelper;
 import com.fengwenyi.api_result.helper.ResultPageHelper;
-import com.fengwenyi.api_result.model.ResultApiModel;
 import com.fengwenyi.api_result.model.ResultApiPageModel;
 import com.fengwenyi.api_result.model.ResultPageModel;
 

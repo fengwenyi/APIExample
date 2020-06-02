@@ -1,11 +1,11 @@
-package siample.api_result.controller;
+package sample.api_result.controller;
 
 import com.fengwenyi.api_result.model.ResultApiModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import siample.api_result.result.ResultUtils;
-import siample.api_result.vo.response.UserResponseVo;
+import sample.api_result.result.ResultUtils;
+import sample.api_result.vo.response.UserResponseVo;
 
 import java.util.Arrays;
 import java.util.List;
