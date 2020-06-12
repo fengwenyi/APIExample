@@ -20,7 +20,7 @@ public class ResponseUtils {
      * @return  接口响应成功，并返回数据
      * @see com.fengwenyi.api_result.model.ResultModel
      */
-    public static <T>ResultModel<T> success(T data) {
+    public static <T> ResultModel<T> success(T data) {
         return ResultHelper.success(SUCCESS_MESSAGE, data);
     }
 }
