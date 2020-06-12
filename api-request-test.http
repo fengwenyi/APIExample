@@ -1,3 +1,7 @@
+GET http://localhost:8080/user
+Accept: application/json
+
+###
 POST http://localhost:80/api/item
 Content-Type: application/x-www-form-urlencoded
 
@@ -6,3 +10,4 @@ id=99&content=new-element
 ### 商品分页
 GET http://localhost:8080/goods/page/1
 Content-Type: application/json
+
