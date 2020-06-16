@@ -1,5 +1,6 @@
 package sample.api_result.vo.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -16,6 +17,7 @@ public class UserResponseVo {
     private String uid;
 
     /** 用户真实姓名 */
+    @JsonProperty("real_name")
     private String realName;
 
     /** 用户昵称 */
