@@ -1,7 +1,7 @@
 package com.fengwenyi.api_example.util;
 
-import com.fengwenyi.api_result.helper.PageResultHelper;
-import com.fengwenyi.api_result.model.PageResultModel;
+import com.fengwenyi.api_result.helper.ResultPageHelper;
+import com.fengwenyi.api_result.model.ResultPageModel;
 
 /**
  * 分页返回结果工具类
@@ -18,10 +18,10 @@ public class PageResultUtils {
      * @param pages    总页数
      * @param current  当前页
      * @param <T>      数据类型
-     * @return {@link PageResultModel}
+     * @return {@link ResultPageModel}
      */
-    public static <T> PageResultModel<T> success(T data, long total, int size, long pages, long current) {
-        return PageResultHelper.success("Success", data, total, size, pages, current);
+    public static <T> ResultPageModel<T> success(T data, long total, int size, long pages, long current) {
+        return ResultPageHelper.success("Success", data, total, pages, size, current);
     }
 
 }

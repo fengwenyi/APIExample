@@ -1,14 +1,12 @@
 package com.fengwenyi.api_example.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.fengwenyi.api_example.bean.PageResultDataBean;
 import com.fengwenyi.api_example.exceptions.DataParseException;
 import com.fengwenyi.api_example.util.ApiResultUtils;
 import com.fengwenyi.api_example.util.PageResultUtils;
 import com.fengwenyi.api_example.util.ResultUtils;
 import com.fengwenyi.api_result.helper.ResultHelper;
-import com.fengwenyi.api_result.model.ApiResultModel;
-import com.fengwenyi.api_result.model.PageResultModel;
+import com.fengwenyi.api_result.model.ResultApiModel;
 import com.fengwenyi.api_result.model.ResultModel;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -91,7 +89,7 @@ public class ApiTestResultController {
      */
     @ApiOperation(value = "API接口返回数据示例")
     @GetMapping("/api-data")
-    public ApiResultModel<Integer, ?> apiData() {
+    public ResultApiModel<Integer, ?> apiData() {
         return ApiResultUtils.success(getData());
     }
 

@@ -7,21 +7,21 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.fengwenyi</groupId>
     <artifactId>APIExample</artifactId>
-    <version>2.0.2</version>
+    <version>2.0.3-BUILD</version>
 
     <name>Api Example</name>
     <description>API接口开发示例项目</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <JavaLib.version>2.0.2</JavaLib.version>
-        <api-result.version>2.0.3</api-result.version>
+        <JavaLib.version>2.0.4.RELEASE</JavaLib.version>
+        <api-result.version>2.0.4.RELEASE</api-result.version>
     </properties>
 
     <dependencies>
@@ -70,6 +70,12 @@
             <groupId>com.fengwenyi</groupId>
             <artifactId>api-result</artifactId>
             <version>${api-result.version}</version>
+        </dependency>
+
+        <!-- validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
     </dependencies>
 
