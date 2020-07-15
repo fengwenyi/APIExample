@@ -23,4 +23,12 @@ public class UserResponseVo {
     /** 用户昵称 */
     private String nickname;
 
+    public UserResponseVo() {
+    }
+
+    public UserResponseVo(String uid, String realName, String nickname) {
+        this.uid = uid;
+        this.realName = realName;
+        this.nickname = nickname;
+    }
 }

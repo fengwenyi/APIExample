@@ -1,6 +1,8 @@
 package sample.api_result.controller;
 
+import com.fengwenyi.api_result.entity.ResponseEntity;
 import com.fengwenyi.api_result.model.ResultApiModel;
+import com.fengwenyi.api_result.util.ResponseUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +34,16 @@ public class ApiController {
                 new UserResponseVo().setUid(UUID.randomUUID().toString()).setRealName("赵云").setNickname("子龙")
         );
         return ResultUtils.success(userResponseVos);
+    }
+
+    @GetMapping("/users-2")
+    public ResponseEntity<?, ?> users2() {
+        List<UserResponseVo> userResponseVos = Arrays.asList(
+               new UserResponseVo("u_1", "关羽", "云长"),
+               new UserResponseVo("u_2", "张飞", "翼德"),
+               new UserResponseVo("u_3", "赵云", "子龙")
+        );
+        return ResponseUtils.success(userResponseVos);
     }
 
 }
