@@ -1,4 +1,4 @@
-package com.fengwenyi.api_example.entity;
+package com.fengwenyi.api.example.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -16,7 +16,7 @@ public class UserEntity {
 
     private String name;
 
-    private String sex;
+    private String gender;
 
     private int age;
 

@@ -1,4 +1,4 @@
-package com.fengwenyi.api_example;
+package com.fengwenyi.api.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

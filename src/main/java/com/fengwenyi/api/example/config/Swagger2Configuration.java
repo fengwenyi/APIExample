@@ -1,4 +1,4 @@
-package com.fengwenyi.api_example.config;
+package com.fengwenyi.api.example.config;
 
 import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Configuration
 @EnableSwagger2
-public class Swagger2Config {
+public class Swagger2Configuration {
 
     private static final String DESCRIPTION = "我是冯文议(Erwin Feng)，Java工程师。我们如何建立一个API工程？怎么设置包比较合理？" +
             "以及与其他一些框架如何优雅的整合。这是一个实战示例，我希望通过这个实例，能够解决或者慢慢解决上面的问题，当然，我自己也会不断去探索" +
@@ -50,7 +50,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-//                .apis(RequestHandlerSelectors.basePackage("com.fengwenyi.api_example"))
+//                .apis(RequestHandlerSelectors.basePackage("com.fengwenyi.api.example"))
                 .paths(PathSelectors.regex("/api/.*"))
 //                .paths(PathSelectors.any())
                 .build()
@@ -65,7 +65,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("API实例工程")
                 .description(DESCRIPTION)
-                .version("2.0.2")
+                .version("1.0.0")
                 .license("许可证")
                 .licenseUrl("许可证URL")
 

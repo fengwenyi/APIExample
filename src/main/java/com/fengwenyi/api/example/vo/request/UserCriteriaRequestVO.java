@@ -1,4 +1,4 @@
-package com.fengwenyi.api_example.vo.param;
+package com.fengwenyi.api.example.vo.request;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ import lombok.Data;
  * @since 2020/4/11 21:53
  */
 @Data
-public class UserParamVO {
+public class UserCriteriaRequestVO {
 
     private Integer id;
 

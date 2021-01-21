@@ -7,21 +7,21 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
+        <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.fengwenyi</groupId>
     <artifactId>APIExample</artifactId>
-    <version>2.0.3-BUILD</version>
+    <version>1.0.0</version>
 
-    <name>Api Example</name>
+    <name>API Example</name>
     <description>API接口开发示例项目</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <JavaLib.version>2.0.4.RELEASE</JavaLib.version>
-        <api-result.version>2.0.4.RELEASE</api-result.version>
+        <JavaLib.version>2.1.1</JavaLib.version>
+        <api-result.version>2.3.1</api-result.version>
     </properties>
 
     <dependencies>
