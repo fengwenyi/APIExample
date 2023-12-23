@@ -42,3 +42,31 @@ sa-token:
   is-concurrent: false
   is-share: false
   token-name: Authorization
+
+#springdoc:
+#  swagger-ui:
+#    path: '/swagger-ui.html'
+#    configUrl: '/v3/api-docs/swagger-config'
+#    disable-swagger-default-url: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    configUrl: '/v3/api-docs/swagger-config'
+    tags-sorter: alpha
+    operations-sorter: alpha
+    disable-swagger-default-url: true
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'sys'
+      paths-to-match: '/**'
+      packages-to-scan: com.fengwenyi.erwin.sample.business.sys.admin.controller
+
+
+erwin:
+  api:
+    exclude:
+      packages:
+        - org.springdoc
+

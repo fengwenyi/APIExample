@@ -28,6 +28,7 @@ ext {
     apiResultVersion = '2.7.4'
     wechatPayVersion = '0.2.11'
     mybatisSpringVersion = '3.0.3'
+    springdocVersion = '2.3.0'
 }
 
 dependencies {
@@ -54,6 +55,10 @@ dependencies {
         exclude(group: 'org.mybatis', module: 'mybatis-spring')
     }
     implementation "org.mybatis:mybatis-spring:${mybatisSpringVersion}" // 临时解决 spring boot 3.2.0 报错的问题
+
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
 }
 

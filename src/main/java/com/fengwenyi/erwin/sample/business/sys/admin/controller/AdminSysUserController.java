@@ -5,6 +5,8 @@ import com.fengwenyi.erwin.sample.business.sys.admin.dto.user.*;
 import com.fengwenyi.erwin.sample.business.sys.admin.service.IAdminSysUserService;
 import com.fengwenyi.erwin.sample.business.sys.admin.vo.user.UserDetailVo;
 import com.fengwenyi.erwin.sample.business.sys.admin.vo.user.UserSimpleVo;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * @author <a href="https://fengwenyi.com">Erwin Feng</a>
  * @since 2023-08-04
  */
+@Tag(name = "AdminSysUserController", description = "用户管理")
 @RestController
 @RequestMapping("/admin/sys/user")
 @RequiredArgsConstructor
@@ -20,6 +23,7 @@ public class AdminSysUserController {
 
     private final IAdminSysUserService adminUserService;
 
+    @Operation(summary = "分页查询", description = "用户分页查询接口")
     @GetMapping("/page")
     public PageTemplate<UserSimpleVo> getPage(@Validated UserGetPageDto getUserPageDto) {
         return adminUserService.getPage(getUserPageDto);
