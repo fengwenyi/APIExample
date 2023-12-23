@@ -12,6 +12,9 @@ import com.fengwenyi.erwin.sample.business.sys.admin.vo.user.UserSimpleVo;
 import com.fengwenyi.erwin.sample.business.sys.entity.RoleEntity;
 import com.fengwenyi.erwin.sample.business.sys.entity.UserEntity;
 import com.fengwenyi.erwin.sample.business.sys.entity.UserRoleEntity;
+import com.fengwenyi.erwin.sample.business.sys.enums.RoleEnum;
+import com.fengwenyi.erwin.sample.business.sys.index.service.ILoginUserService;
+import com.fengwenyi.erwin.sample.business.sys.index.service.IUserService;
 import com.fengwenyi.erwin.sample.business.sys.mp.IMpRoleService;
 import com.fengwenyi.erwin.sample.business.sys.mp.IMpUserRoleService;
 import com.fengwenyi.erwin.sample.business.sys.mp.IMpUserService;
@@ -44,6 +47,7 @@ public class AdminUserServiceImpl implements IAdminSysUserService {
     private final IMpUserService mpUserService;
     private final IMpRoleService mpRoleService;
     private final IMpUserRoleService mpUserRoleService;
+    private final IUserService userService;
 
     @Override
     public PageTemplate<UserSimpleVo> getPage(UserGetPageDto getUserPageDto) {
@@ -211,6 +215,15 @@ public class AdminUserServiceImpl implements IAdminSysUserService {
 
     @Override
     public void delete(Long id) {
+
+        // 如果是 超级管理员，不能删除
+        List<String> userRoleCodeList = userService.queryUserRoleCodeList(id);
+        if (!CollectionUtils.isEmpty(userRoleCodeList)) {
+            if (userRoleCodeList.contains(RoleEnum.SUPER_ADMIN.name())) {
+                throw new BizException(ResultEnum.FAILED, "删除失败，不能删除超级管理员");
+            }
+        }
+
         mpUserRoleService.remove(new LambdaQueryWrapper<UserRoleEntity>().eq(UserRoleEntity::getUserId, id));
         mpUserService.removeById(id);
     }

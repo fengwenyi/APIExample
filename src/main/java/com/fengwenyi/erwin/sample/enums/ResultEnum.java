@@ -33,6 +33,8 @@ public enum ResultEnum implements IResult {
 
     BIZ_FAILED("BIZ_FAILED", "业务失败"),
 
+    FAILED("FAILED", "失败"),
+
     ;
 
     private final String code;
