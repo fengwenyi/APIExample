@@ -6,6 +6,7 @@ import com.fengwenyi.erwin.sample.business.sys.strategy.LoginStrategy;
 import com.fengwenyi.erwin.sample.enums.ResultEnum;
 import com.fengwenyi.erwin.sample.exception.BizException;
 import com.fengwenyi.erwin.sample.util.PasswordUtils;
+import com.fengwenyi.javalib.encryption.Base64Utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,12 @@ public class PasswordLoginStrategyImpl extends LoginStrategy {
 
     @Override
     protected void checkCertificate(String certificate) {
-        if (!PasswordUtils.check(certificate, userEntity.getPassword())) {
+        if (certificate.length() < 16) {
+            throw new BizException(ResultEnum.USER_LOGIN_FAILED, "登录失败：用户名或密码不正确");
+        }
+        String pwdCiphertext = certificate.substring(16);
+        String realPwd = new String(Base64Utils.decode(pwdCiphertext));
+        if (!PasswordUtils.check(realPwd, userEntity.getPassword())) {
             throw new BizException(ResultEnum.USER_LOGIN_FAILED, "登录失败：用户名或密码不正确");
         }
     }
