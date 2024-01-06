@@ -12,7 +12,7 @@ create table sys_user
     locked           tinyint(1) default 0 null comment '锁定',
     email            varchar(32)          null comment '邮箱',
     phone            varchar(20)          null comment '手机',
-    constraint uni_emai
+    constraint uni_email
         unique (email),
     constraint uni_phone
         unique (phone),

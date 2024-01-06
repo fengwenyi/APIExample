@@ -11,4 +11,8 @@
 - 增加 swagger 文档
 - 解决 swagger api-docs 返回结果被 API 统一封装的问题
 - 登录密码加密混淆处理
+- spring boot 3.2.1
+- mybatis-plus 3.5.5
+- 修复 swagger-ui 不能之间显示的问题
+- 修复sql user表 email索引名称拼写不正确的问题
 
